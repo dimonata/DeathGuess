@@ -19,18 +19,18 @@ export function calculateErrorPercentage(guess: number, actual: number): number 
 
 export function getRank(scorePercentage: number): Rank {
   if (scorePercentage >= 95) {
-    return { name: "Arquivista", message: "Precisão digna de um arquivo histórico." };
+    return { name: "Archivist", message: "Precision worthy of a historical archive." };
   }
   if (scorePercentage >= 80) {
-    return { name: "Especialista", message: "Você conhece a escala por trás das manchetes." };
+    return { name: "Expert", message: "You understand the scale behind the headlines." };
   }
   if (scorePercentage >= 60) {
-    return { name: "Historiador", message: "Seu senso histórico está muito bem calibrado." };
+    return { name: "Historian", message: "Your historical instinct is remarkably well calibrated." };
   }
   if (scorePercentage >= 30) {
-    return { name: "Investigador", message: "Boa intuição — ainda há arquivos a explorar." };
+    return { name: "Investigator", message: "Good instincts — there are still records to explore." };
   }
-  return { name: "Testemunha", message: "Toda investigação começa com uma primeira pista." };
+  return { name: "Witness", message: "Every investigation begins with a first clue." };
 }
 
 export function buildGameSummary(results: RoundResult[]): GameSummary {

@@ -68,7 +68,7 @@ export function Game() {
       <GameHeader round={roundIndex + 1} totalRounds={rounds.length} score={totalScore} />
       <div className="game-board">
         <EventVisual event={currentEvent} />
-        <section className="game-panel" aria-label={`Palpite sobre ${currentEvent.title}`}>
+        <section className="game-panel" aria-label={`Guess for ${currentEvent.title}`}>
           {currentResult ? (
             <RoundReveal
               result={currentResult}
@@ -76,7 +76,12 @@ export function Game() {
               onNext={advanceRound}
             />
           ) : (
-            <GuessForm key={currentEvent.id} difficulty={currentEvent.difficulty} onSubmit={submitGuess} />
+            <GuessForm
+              key={currentEvent.id}
+              difficulty={currentEvent.difficulty}
+              teaser={currentEvent.teaser}
+              onSubmit={submitGuess}
+            />
           )}
         </section>
       </div>

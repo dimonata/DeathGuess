@@ -516,7 +516,7 @@ input:focus-visible {
 }
 
 .event-visual__index::before {
-  content: "EVENTO ";
+  content: "CASE ";
   color: rgba(255, 255, 255, 0.28);
 }
 
@@ -632,9 +632,30 @@ input:focus-visible {
 
 .difficulty i.is-active { background: var(--acid); }
 
+.case-brief {
+  margin-top: 1.2rem;
+  padding: 0.85rem 1rem;
+  border-left: 2px solid var(--acid);
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.case-brief > span {
+  color: var(--acid);
+  font-size: 0.52rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.case-brief p {
+  margin: 0.35rem 0 0;
+  color: #b6b8b1;
+  font-size: 0.76rem;
+  line-height: 1.5;
+}
+
 .guess-form h2 {
   max-width: 470px;
-  margin: 1.15rem 0 0;
+  margin: 1.35rem 0 0;
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(2.1rem, 4.1vw, 4rem);
   font-weight: 400;

@@ -19,9 +19,9 @@ export function GameHeader({ round, totalRounds = GAME_LENGTH, score }: GameHead
         <span className="accent-text">GUESS</span>
       </div>
 
-      <div className="round-progress" aria-label={`Rodada ${round} de ${totalRounds}`}>
+      <div className="round-progress" aria-label={`Round ${round} of ${totalRounds}`}>
         <div className="round-progress__label">
-          <span>RODADA</span>
+          <span>ROUND</span>
           <strong>
             {String(round).padStart(2, "0")} <i>/</i> {String(totalRounds).padStart(2, "0")}
           </strong>
@@ -32,7 +32,7 @@ export function GameHeader({ round, totalRounds = GAME_LENGTH, score }: GameHead
       </div>
 
       <div className="score-counter">
-        <span>PONTOS</span>
+        <span>POINTS</span>
         <strong>{formatNumber(score)}</strong>
       </div>
     </header>

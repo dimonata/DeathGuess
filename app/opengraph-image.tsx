@@ -19,7 +19,7 @@ export default function OpenGraphImage() {
     >
       <div style={{ display: "flex", flexDirection: "column", gap: 24, width: 970 }}>
         <div style={{ color: "#e8ff47", display: "flex", fontSize: 26, letterSpacing: 8 }}>
-          JOGO DE ESTIMATIVAS HISTÓRICAS
+          A GAME OF HISTORICAL ESTIMATES
         </div>
         <div style={{ display: "flex", fontSize: 112, fontWeight: 900, letterSpacing: -8 }}>
           DEATH<span style={{ color: "#e8ff47" }}>GUESS</span>

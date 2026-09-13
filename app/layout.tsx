@@ -4,7 +4,7 @@ import "./globals.css";
 
 const title = "DeathGuess — How many died?";
 const description =
-  "Estime o número de vítimas de acontecimentos que marcaram a história e descubra quão perto você consegue chegar.";
+  "Estimate the death toll of events that shaped history and discover how close you can get.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://deathguess.vercel.app"),
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     title,
     description,
     type: "website",
-    locale: "pt_BR",
+    locale: "en_US",
     siteName: "DeathGuess",
   },
   twitter: {
@@ -33,7 +33,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   return (
-    <html lang="pt-BR">
+    <html lang="en">
       <body>{children}</body>
     </html>
   );

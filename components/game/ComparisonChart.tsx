@@ -11,15 +11,15 @@ export function ComparisonChart({ guess, actual }: ComparisonChartProps) {
   const actualWidth = Math.max((actual / maximum) * 100, 4);
 
   return (
-    <div className="comparison" aria-label={`Seu palpite foi ${formatNumber(guess)} e o número real foi ${formatNumber(actual)}`}>
+    <div className="comparison" aria-label={`Your guess was ${formatNumber(guess)} and the sourced count was ${formatNumber(actual)}`}>
       <div className="comparison__row">
-        <div className="comparison__label"><span>SEU PALPITE</span><strong>{formatNumber(guess)}</strong></div>
+        <div className="comparison__label"><span>YOUR GUESS</span><strong>{formatNumber(guess)}</strong></div>
         <div className="comparison__track" aria-hidden="true">
           <span className="comparison__bar comparison__bar--guess" style={{ width: `${guessWidth}%` }} />
         </div>
       </div>
       <div className="comparison__row">
-        <div className="comparison__label"><span>NÚMERO REAL</span><strong>{formatNumber(actual)}</strong></div>
+        <div className="comparison__label"><span>SOURCED COUNT</span><strong>{formatNumber(actual)}</strong></div>
         <div className="comparison__track" aria-hidden="true">
           <span className="comparison__bar comparison__bar--actual" style={{ width: `${actualWidth}%` }} />
         </div>

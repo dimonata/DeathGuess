@@ -1,9 +1,9 @@
-export type CountType = "exact" | "estimated";
+export type CountType = "exact" | "estimated" | "minimum";
 
 export type HistoricalEvent = {
   id: number;
   title: string;
-  year: number;
+  year: number | string;
   location: string;
   category: string;
   deaths: number;
@@ -12,6 +12,7 @@ export type HistoricalEvent = {
   imageAlt: string;
   imageAttribution: string;
   imageSourceUrl: string;
+  teaser: string;
   description: string;
   sourceName: string;
   sourceUrl: string;

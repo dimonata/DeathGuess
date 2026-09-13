@@ -32,9 +32,9 @@ export function EventVisual({ event }: EventVisualProps) {
         href={event.imageSourceUrl}
         target="_blank"
         rel="noreferrer"
-        aria-label={`Crédito da imagem: ${event.imageAttribution}`}
+        aria-label={`Image credit: ${event.imageAttribution}`}
       >
-        Foto: {event.imageAttribution} <ExternalLink />
+        Image: {event.imageAttribution} <ExternalLink />
       </a>
     </div>
   );

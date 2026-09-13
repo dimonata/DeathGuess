@@ -1,17 +1,17 @@
 # DeathGuess
 
-Um jogo de estimativas históricas: em cada rodada, o jogador tenta chegar o mais perto possível do número de vítimas de um acontecimento real.
+A historical estimation game: each round asks the player to guess the death toll of a real event, disaster or criminal case.
 
-## Executar localmente
+## Run locally
 
 ```bash
 npm install
 npm run dev
 ```
 
-A aplicação estará disponível em `http://localhost:3000`.
+The application will be available at `http://localhost:3000`.
 
-## Verificações
+## Validation
 
 ```bash
 npm run typecheck
@@ -19,23 +19,25 @@ npm run lint
 npm run build
 ```
 
-## Conteúdo e arquitetura
+## Content and architecture
 
-- Os acontecimentos, fontes e créditos de imagem ficam em `data/events.ts`.
-- A fórmula de pontuação e as estatísticas finais ficam em `lib/scoring.ts`.
-- A seleção de rodadas fica em `lib/game.ts` e aceita uma `seed`; uma data ISO pode ser usada futuramente para gerar um Daily Challenge igual para todos.
-- Imagens históricas ficam em `public/events` e são servidas localmente.
-- Componentes de cada etapa do jogo ficam em `components/game`.
+- The event archive, sources and image credits live in `data/events.ts`.
+- Scoring and final statistics live in `lib/scoring.ts`.
+- Round selection lives in `lib/game.ts` and accepts a seed. A future Daily Challenge can pass an ISO date to generate the same game for every player.
+- Historical and contextual images are stored locally in `public/events`.
+- Each stage of the experience is separated into components under `components/game`.
 
-## Publicar na Vercel
+The archive currently contains 19 sourced cases. Each game randomly selects 10 of them.
 
-1. Envie este diretório para um repositório Git.
-2. Em [vercel.com/new](https://vercel.com/new), importe o repositório.
-3. A Vercel detectará Next.js automaticamente; mantenha o comando de build `npm run build` e não adicione variáveis de ambiente.
-4. Depois de escolher o domínio definitivo, ajuste `metadataBase` em `app/layout.tsx` caso ele seja diferente de `https://deathguess.vercel.app`.
+## Deploy to Vercel
 
-Também é possível publicar pelo CLI com `npx vercel`.
+1. Push this directory to a Git repository.
+2. Import the repository at [vercel.com/new](https://vercel.com/new).
+3. Vercel detects Next.js automatically. Keep `npm run build` as the build command; no environment variables are required.
+4. If the final domain differs from `https://deathguess.vercel.app`, update `metadataBase` in `app/layout.tsx`.
 
-## Notas editoriais
+You can also deploy from the command line with `npx vercel`.
 
-Os números exibidos foram selecionados a partir das fontes institucionais vinculadas em cada rodada. Contagens aproximadas, como a do Titanic, são identificadas explicitamente como estimativas. Ao adicionar eventos, não remova o link de fonte nem o crédito/licença da imagem.
+## Editorial notes
+
+Every displayed count is backed by the source linked in its result panel. Approximate totals are labeled `estimated`; lower-bound totals are labeled `at least`. New events should always include a source and an image credit/license.

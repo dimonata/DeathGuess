@@ -3,10 +3,11 @@ import { ArrowRight } from "@/components/ui/Icons";
 
 type GuessFormProps = {
   difficulty: 1 | 2 | 3 | 4 | 5;
+  teaser: string;
   onSubmit: (guess: number) => void;
 };
 
-export function GuessForm({ difficulty, onSubmit }: GuessFormProps) {
+export function GuessForm({ difficulty, teaser, onSubmit }: GuessFormProps) {
   const inputId = useId();
   const [value, setValue] = useState("");
   const [error, setError] = useState("");
@@ -16,7 +17,7 @@ export function GuessForm({ difficulty, onSubmit }: GuessFormProps) {
     const guess = Number(value);
 
     if (value === "" || !Number.isSafeInteger(guess) || guess < 0) {
-      setError("Digite um número inteiro válido.");
+      setError("Enter a valid whole number.");
       return;
     }
 
@@ -27,18 +28,22 @@ export function GuessForm({ difficulty, onSubmit }: GuessFormProps) {
   return (
     <form className="guess-form" onSubmit={handleSubmit} noValidate>
       <div className="guess-form__heading">
-        <span className="step-label">SEU PALPITE</span>
-        <span className="difficulty" aria-label={`Dificuldade ${difficulty} de 5`}>
+        <span className="step-label">YOUR GUESS</span>
+        <span className="difficulty" aria-label={`Difficulty ${difficulty} out of 5`}>
           {[0, 1, 2, 3, 4].map((level) => (
             <i className={level < difficulty ? "is-active" : ""} key={level} />
           ))}
         </span>
       </div>
-      <h2>Quantas pessoas morreram?</h2>
-      <p>Digite sua melhor estimativa. A resposta será revelada depois da confirmação.</p>
+      <div className="case-brief">
+        <span>CASE FILE</span>
+        <p>{teaser}</p>
+      </div>
+      <h2>How many people died?</h2>
+      <p>Enter your best estimate. The answer is revealed after you lock it in.</p>
 
       <label htmlFor={inputId} className="guess-input">
-        <span className="sr-only">Número estimado de vítimas</span>
+        <span className="sr-only">Estimated number of victims</span>
         <input
           id={inputId}
           type="text"
@@ -55,13 +60,13 @@ export function GuessForm({ difficulty, onSubmit }: GuessFormProps) {
           aria-invalid={Boolean(error)}
           autoFocus
         />
-        <span>VÍTIMAS</span>
+        <span>VICTIMS</span>
       </label>
-      <span id={`${inputId}-hint`} className="input-hint">Use apenas números inteiros</span>
+      <span id={`${inputId}-hint`} className="input-hint">Whole numbers only</span>
       {error && <span id={`${inputId}-error`} className="form-error" role="alert">{error}</span>}
 
       <button className="primary-button" type="submit">
-        Confirmar palpite
+        Lock in guess
         <span className="button-icon"><ArrowRight /></span>
       </button>
     </form>
