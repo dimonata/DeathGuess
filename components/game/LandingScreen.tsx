@@ -26,7 +26,7 @@ export function LandingScreen({ onStart }: LandingScreenProps) {
           </h1>
           <p className="hero__subtitle">How many died?</p>
           <p className="hero__description">
-            Can you estimate the death toll of the events that shaped history?
+            Can you estimate and compare the human toll of events that shaped history?
           </p>
 
           <button className="primary-button primary-button--hero" type="button" onClick={onStart}>

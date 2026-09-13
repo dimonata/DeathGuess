@@ -4,7 +4,7 @@ import "./globals.css";
 
 const title = "DeathGuess — How many died?";
 const description =
-  "Estimate the death toll of events that shaped history and discover how close you can get.";
+  "Estimate or compare the death toll of events that shaped history across two game modes.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://deathguess.vercel.app"),

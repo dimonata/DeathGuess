@@ -1,4 +1,4 @@
-import type { HistoricalEvent } from "@/types/game";
+import type { ChoiceRound, HistoricalEvent } from "@/types/game";
 
 export const GAME_LENGTH = 10;
 
@@ -38,4 +38,28 @@ export function createRoundOrder(
   }
 
   return shuffled.slice(0, Math.min(length, shuffled.length));
+}
+
+export function createChoiceRoundOrder(
+  events: HistoricalEvent[],
+  options: { length?: number; seed?: string } = {},
+): ChoiceRound[] {
+  const { length = GAME_LENGTH, seed = crypto.randomUUID() } = options;
+  const shuffled = createRoundOrder(events, {
+    length: events.length,
+    seed,
+  });
+  const rounds: ChoiceRound[] = [];
+
+  while (shuffled.length >= 2 && rounds.length < length) {
+    const left = shuffled.shift()!;
+    const differentIndex = shuffled.findIndex((event) => event.deaths !== left.deaths);
+
+    if (differentIndex === -1) break;
+
+    const [right] = shuffled.splice(differentIndex, 1);
+    rounds.push({ id: `${left.id}-${right.id}`, left, right });
+  }
+
+  return rounds;
 }

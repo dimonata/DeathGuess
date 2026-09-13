@@ -4,7 +4,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "DeathGuess",
     short_name: "DeathGuess",
-    description: "How many died? A game of historical estimates.",
+    description: "Estimate or compare historical death tolls across two game modes.",
     start_url: "/",
     display: "standalone",
     background_color: "#0a0b0d",

@@ -92,7 +92,7 @@ export function FinalScreen({ results, onRestart }: FinalScreenProps) {
             Share result <span className="button-icon"><ShareIcon /></span>
           </button>
           <button className="secondary-button" type="button" onClick={onRestart}>
-            <RotateCcw /> Play again
+            <RotateCcw /> Choose mode
           </button>
         </div>
         <span className="share-status" role="status">{shareStatus}</span>

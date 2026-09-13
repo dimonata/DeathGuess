@@ -27,7 +27,23 @@ export type RoundResult = {
   score: number;
 };
 
-export type GameStatus = "landing" | "playing" | "finished";
+export type GameMode = "exact" | "higher";
+
+export type ChoiceRound = {
+  id: string;
+  left: HistoricalEvent;
+  right: HistoricalEvent;
+};
+
+export type ChoiceRoundResult = {
+  round: ChoiceRound;
+  selectedId: number;
+  correctId: number;
+  isCorrect: boolean;
+  score: number;
+};
+
+export type GameStatus = "landing" | "mode-select" | "playing" | "finished";
 
 export type GameSummary = {
   totalScore: number;

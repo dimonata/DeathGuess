@@ -1,6 +1,11 @@
 # DeathGuess
 
-A historical estimation game: each round asks the player to guess the death toll of a real event, disaster or criminal case.
+A historical knowledge game about the human toll of real events, disasters, conflicts and criminal cases.
+
+Players choose between two modes:
+
+- `Exact Number`: enter a death-toll estimate and score according to its accuracy.
+- `Higher Toll`: compare two events and choose which one caused more deaths.
 
 ## Run locally
 
@@ -27,7 +32,7 @@ npm run build
 - Historical and contextual images are stored locally in `public/events`.
 - Each stage of the experience is separated into components under `components/game`.
 
-The archive currently contains 19 sourced cases. Each game randomly selects 10 of them.
+The archive currently contains 25 sourced cases. Each game randomly selects 10 events or 10 unique pairs, depending on the selected mode.
 
 ## Deploy to Vercel
 
